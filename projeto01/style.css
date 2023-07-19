@@ -1,0 +1,64 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+#hero {
+  width: 592px;
+  margin: 0 auto 72px;
+  /*margin auto meio que "centraliza" as laterais, tentando sempre equilibrar*/
+}
+
+#hero img {
+  margin-bottom: 72px;
+}
+
+h1 {
+  font-family: 'Inter', sans-serif;
+  color: #000000;
+  font-weight: normal;
+  /*por padrão o h1 é bold, aqui eu estou tirando o bold para ficar no padrão*/
+  font-size: 48px;
+  line-height: 56px;
+}
+
+h1 span {
+  font-weight: bold;
+  /*aqui estou inserindo apenas o bold para o span dentro do h1, conforme colocado no html*/
+}
+
+span,
+a {
+  color: #ff9900;
+}
+
+p {
+  color: #7d7987;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+#footer {
+  width: 592px;
+  margin: auto;
+  height: 28px;
+  font-size: 14px;
+}
+
+#line {
+  width: 568px;
+  height: 0;
+  border: 1px solid #eceff2;
+  margin-bottom: 8px;
+}
+
+#footer a {
+  padding: 0 14px 0;
+}
+
+#balls {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
