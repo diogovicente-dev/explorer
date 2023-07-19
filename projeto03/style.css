@@ -139,6 +139,7 @@ fieldset legend {
 
 .checkbox {
   display: flex;
+  gap: 16px;
 }
 
 .time {
