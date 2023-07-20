@@ -262,3 +262,22 @@ o comando significa:
   width: 100%;
 }
 ```
+
+**BEFORE**
+
+para inclusão de um checkbox mais coerente com o protótipo, é necessário criar estratégias diferentes para criação.
+
+remover o checkbox padrão do sistema e criar um "do zero"
+
+problema de acessibilidade: ao dar um display: none, a navegação pelo teclado (tabs) fica comprometida.
+
+solução: posicionar o cehckbox exatamente em cima do "checkbox criado", e deixar a opacidade 0 (invisível)
+input original => relative
+label => receber absolute
+
+outline => como criar no cehckbox?
+
+
+**POSITION**
+RELATIVE => geralmente inserido no "Pai" para ter a referencia para os elementos filgos
+ABSOLUTE => aplicados aos filhos, absolutos em relação ao pai relative.
