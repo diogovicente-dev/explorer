@@ -7,16 +7,16 @@ HTML => tag _root_ (raiz) do sistema
 - atributo que define a linguagem -> para nós, colocar **pt-br**
 
 **Elementos HTML**
-
 _Pai e Filhos_
+Tags = elementos html
 
 HEAD
 
 - contém instruções para a página
 - META => configurações da página, com o emmet não remover nada, se tiver algo o IE, remover a linha (internet explorer);
-- META => - charset = conjunto de caracteres (geralmente UTF-8) - viewport = tela do dispositivo (importante para sites para serem exibidos em dispositivos móveis)
+- META => - charset = conjunto de caracteres (geralmente UTF-8 - tem que colocar para não "bagunçar" os caracteres) - viewport = tela do dispositivo (importante para sites para serem exibidos em dispositivos móveis)
   BODY
-- é o que é exibido no navegador
+- é o que é exibido no navegador, corpo, o que é exibido para o cliente (navegador)
 
 **PROJETO**
 
@@ -24,7 +24,13 @@ HEAD
 
 _imagens_, _texto_, etc...
 
-imagens: quando em vetores, salvar uma imagem em svg torna-se melhor porque tem-se ua qualidade boa e tamanho pequeno, comparado.
+imagens: quando em vetores, salvar uma imagem em svg torna-se melhor porque tem-se ua qualidade boa e tamanho pequeno, comparado. Se precisar de fundo transparente, exportar em PNG (figma); se não precisar, pode exportar em jpg
+
+elemento <img /> => src = source (origem da imagem); alt (alternative = texto para acessibilidade)
+elemento <h1> = títulos
+elemento <p> = parágrafos
+<span> elemento inline que não altera o texto no html (usar para depois no Css)
+<strong> - deixa o elemento bold automaticamente no html
 
 tag a: estrutura para criar um link para enviar direto um e-mail
 
@@ -33,12 +39,16 @@ tag a: estrutura para criar um link para enviar direto um e-mail
 **INLINE**
 
 - Possui apenas o tamanho do próprio elemento, se o próximo elemento for inline, fica ao lado, se block, pula a linha.
+
   **BLOCK**
-- Elementos que ocupam a linha inteira, e quebram para o texto para a prxima linha
+
+- Elementos que ocupam a linha inteira, e quebram para o texto para a próxima linha; se o elemento block vier depois de um inline, quebra a linha
 
 **FONTES**
 
-- procurar fontes no googel fonts
+- procurar fontes no google fonts (https://fonts.google.com/)
+- copiar o link do google fonts e colar abaixo (href)
+- preconnect colocar logo abaixo do <head>, acima das tags do viewport e charset
 
 **CORES**
 
@@ -59,9 +69,31 @@ TEXTOS => text-align: center
 
 - ao delimitar, alinhamento central perde-se (relacionado à página)
 
+**CSS**
+shorthand
+muitos atributos funcionam de maneira igual ou parecida
+
+margin: 0 auto 72px
+1 valor: top
+2 valor: left e right
+3 valor: bootom
+
+margin: auto (para todos)
+
+margin: auto 72px 
+auto: top e bottom
+72px right e left
+
+margin: 0 16px 22px 32px
+0: top
+16px: right
+22px: bottom
+32px: left
+
+
 **POSICIONAMENTO**
 
-Cada position, são camadas que ficam sobrepostas
+Cada position, são camadas que ficam sobrepostas (acima dos demais elementos)
 
 padrão do position: static
 
@@ -71,6 +103,9 @@ id: recomendado para usar em tags únicas
 class: pode ser usado em várias tags (geralmente do mesmo contexto)
 
 se quiser tudo centralizado, colocar, por exemplo, alinhamento do body direto
+
+
+
 
 **MÓDULO 2 - AVANÇANDO EM HTML E CSS**
 
@@ -136,6 +171,8 @@ ao aplicar o display: flex na tag "pai", libera atributos diferentes para os "fi
 
 A11y / W3C => respeito sobre acessibilidade
 exemplo: não é legal colocar NAV dentro do Header
+
+Refatorar = mudar o código sem mexer no resultado final
 
 **MELHORANDO TEXTOS E APARENCIA**
 Quando no protótipo estiver elementos iguais, um com espécie de diferença visual (negrito, selecionado, etc), significa "hover"
@@ -276,7 +313,6 @@ input original => relative
 label => receber absolute
 
 outline => como criar no cehckbox?
-
 
 **POSITION**
 RELATIVE => geralmente inserido no "Pai" para ter a referencia para os elementos filgos
