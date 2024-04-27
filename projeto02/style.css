@@ -193,7 +193,7 @@ button {
   background-color: #69b99d;
   border-radius: 4px;
   padding: 14px 32px 15px;
-  border: none;
+  border: none; /* pode ser "0" zero também */
 
   display: flex;
   align-items: center;
@@ -201,7 +201,7 @@ button {
   gap: 10px;
 
   cursor: pointer;
-}
+}T
 
 button:hover {
   background-color: #4fa587;

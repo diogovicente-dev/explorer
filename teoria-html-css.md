@@ -80,7 +80,7 @@ margin: 0 auto 72px
 
 margin: auto (para todos)
 
-margin: auto 72px 
+margin: auto 72px
 auto: top e bottom
 72px right e left
 
@@ -89,7 +89,6 @@ margin: 0 16px 22px 32px
 16px: right
 22px: bottom
 32px: left
-
 
 **POSICIONAMENTO**
 
@@ -103,9 +102,6 @@ id: recomendado para usar em tags únicas
 class: pode ser usado em várias tags (geralmente do mesmo contexto)
 
 se quiser tudo centralizado, colocar, por exemplo, alinhamento do body direto
-
-
-
 
 **MÓDULO 2 - AVANÇANDO EM HTML E CSS**
 
@@ -177,6 +173,12 @@ Refatorar = mudar o código sem mexer no resultado final
 **MELHORANDO TEXTOS E APARENCIA**
 Quando no protótipo estiver elementos iguais, um com espécie de diferença visual (negrito, selecionado, etc), significa "hover"
 
+**ALINHAMENTOS**
+_CAMINHO PARA MELHORAR É REPETIÇÃO_
+
+**INSPECT**
+Se protótipo de alta fidelidade, o inspect do figma traz informações importantes
+
 **LINEAR GRADIENT**
 inicialmente - 3 valores
 
@@ -185,15 +187,20 @@ inicialmente - 3 valores
 2 - primeira cor (mais importante)
 3 - segunda cor (fica por baixo da primeira cor)
 
+- background: linear-gradient ()
+  -- passo argumentos para a função de linear gradient
+
+- tem ferramentas para criação de css - linear gradient (css gradient io)
+
 **FORMULÁRIOS**
 
-camposformulario
+campos formulario
 
 campos input => select, text-area,
 
-input:text
+input: text
 
-- type="text" - mais importante name="titulo" id="titulo"
+- type="text" - mais importante, que define qual a entrada dos dados; name="titulo" id="titulo"
 
 ```html
 <input type="text" name="titulo" id="titulo />
@@ -217,7 +224,7 @@ na label, serve para acessibilidade, o "for" deve indicar o "name" do input
 
 ```html
 <form action="" method="">
-  <!--no formulário deve ser inserido o input-->
+  <!--no formulário deve ser inserido os inputs que eu precisarei-->
 </form>
 ```
 
@@ -225,12 +232,13 @@ action => para onde o formulario será enviado
 clicar em "enviar" - vai ser enviado para um lugar
 se não atualizar, fica na mesma página
 
-method => método que será enviado a informação do formulário
+method => método que será enviado a informação do formulário (se não colocar method, sempre será considerado o GET)
 GET => usado para receber e enviar recursos (dados) pela URL
-POST => somente para ENVIAR recursos - POSTO - envia os recursos pelo corpo da requisição
+POST => somente para ENVIAR recursos - POSTO - envia os recursos pelo corpo da requisição (não fica explítico na url)
 se não enviar o method, fica padrão o GET
 
-query strngs parameters -> ver pela DevTools - está na URL
+query strings parameters -> ver pela DevTools - está na URL
+no payload tem toda a url descrita (GET)
 
 essa comunicação de GET e POST é básico para comunicação com BACK, comunicar com o usuário
 
@@ -242,9 +250,22 @@ essa comunicação de GET e POST é básico para comunicação com BACK, comunic
 </form>
 ```
 
+**pseudo**
+
+´´´css
+body::before {
+content: "";
+}
+´´´
+este "componente" before criado, entende-se que é um componente que vem antes do body.
+pode ser alterado apra 'after', se precisar vir depois do body.
+No caso do projeto 03, foi criado o componente e ele ficará antes do body;
+
 _tags_ padrão html para construção de formulários
 
-fieldset -> agrupamento de campos, conjunto de campos
+fieldset -> agrupamento de campos, conjunto de campos, serve para accesbilidade
+
+- tem legend (nome do campo)
 
 **organização**
 
@@ -257,7 +278,12 @@ LABEL => elemento inline
 
 INPUT => elemento inline-block
 
-os elementos inline, algumas propriedades não funcionam (exemplo: width)
+wrapper => agrupamento
+
+name="" => o atributo apenas apenas para quando precisa enviar o form para algum lugar
+
+os elementos inline, algumas propriedades não funcionam (exemplo: width não funciona)
+inline-block já funciona o width funciona
 
 **box-sizing: border box;**
 sem essa propriedade, se voce tiver uma caixa de 200px de width e colocar mais 100px de padding, por exemplo, a caixa possuirá 300px de tamanho
@@ -279,6 +305,11 @@ no html, select é uma tag específica para seleção
 **vendor-prefixes**
 forma de avaliar como deverá ser usuado um atributo para um determinado navegador.
 ver em: https://caniuse.com/
+procurar a propriedade no can-i-use a propriedade
+
+**trabalhando com ícones**
+pode usar um site para transformar a imagem de svg para " código css" e conseguir estilizar cor, etc..
+https://yoksel.github.io/url-encoder/
 
 **css**
 
@@ -315,5 +346,33 @@ label => receber absolute
 outline => como criar no cehckbox?
 
 **POSITION**
-RELATIVE => geralmente inserido no "Pai" para ter a referencia para os elementos filgos
+RELATIVE => geralmente inserido no "Pai" para ter a referencia para os elementos filhos
 ABSOLUTE => aplicados aos filhos, absolutos em relação ao pai relative.
+
+**BOTÕES**
+
+- sempre criar hover para os botões
+
+**SUBMETENDO FORMULÁRIOS**
+
+- geralmente o botão deve ficar preferencialmente dentro da tag=form do código
+- entretanto, caso não se possível, criar um "id" no form e no input a proprierada form=""nomedoformulario"
+- botão dentro do formulario, sem atributo nenhum, entende que é botão de "submit"
+
+<form >
+  <button>Nome do Botão</button>
+<form>
+
+- para ser um botao de não submit, na tag "<button>" inserir o atributo "type"
+
+<button type="button" value="Cancelar"> == nesse caso não é botão de submit
+
+- campos obrigatórios
+
+´´´html
+atributo: required
+´´´
+
+**Validações**
+Faz validação no front com JavaScript, tambéz faz validação no front e no back também.
+Natural ter validações duplas, triplas, etc...
