@@ -25,10 +25,11 @@ comandos:
 git init (inicia o git (repositório))
 git add . (adiciona todos os arquivos modificados ao stage)
 git commit -m "message here"
-git push (envia par o repositório remoto)
+git push "link do repositório" main
 ```
 
 abrir o terminal no vscode, escolher o terminal "bash"
+
 ```git
 git init
 git -v (exibe a versão)
