@@ -39,4 +39,43 @@ inserir regras
 }
 ´´´
 
-analisar as interfaces mobile e desktop, avaliar as "caixas"
+analisar as interfaces mobile e desktop, avaliar as "caixas" que poderão ser "readequadas"
+
+**MOBILE FIRST**
+mesmo sendo mobile first, devemos observar o padrão de desktop para entender como será feito, entender para facilitar as alterações (adaptações) no
+código pensando em responsividade.
+
+**MELHORIA DESENHO DAS FONTES**
+aplicar parâmetros no atributo universal do CSS
+
+´´´css
+
+- (\*){
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  }
+  ´´´
+  **PROJETO CHEESECAKE**
+
+Ao inserir o atributo box-sizing: border box, colocanco um max-width, tudo o que for inserido na "caixa" (padding, margin) o conteúdo irá se adaptar para atender o atributo do "pai" que colocamos.
+
+Espaços (entre itens) unificados, para manter padrão.
+
+**CLAMP**
+CLAMP usado para muitos pontos de quebra e precisa de maior flexibilidade para as fontes.
+
+clamp () é uma função e funciona da seguinte forma:
+
+clamp (mínimo, ideal, alto) - valores das fontes (font-size, etc)
+
+colocado no "código" do css fora do @media;
+verificar como se comporta na ferramenta de desenvolvedor para adaptar as telas
+
+**uso do mayke**
+
+mínimo: menor valor entre das versões mobile e desktop (geralmente do mobile) (1.4rem por exemplo)
+
+máximo: maior valor entre das versões mobile e desktop (geralmente do desktop) (3.6rem por exemplo)
+
+ideal: valor entre os dois que pode ser flexível (geralmente mayke coloca 2vw + 1rem (viewport + rem) para ser flexível equanto
+vai aumentando ou reduzindo)
