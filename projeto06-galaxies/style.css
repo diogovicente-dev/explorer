@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  background-color: #121214;
+  color: #fff;
+  padding: 72px 104px;
+
+  display: grid; /*inserido o item grid para alinhar os conteúdos ao centro*/
+  justify-content: center;
+}
+
+header h1 {
+  font-size: 56px;
+  font-weight: 900;
+  color: #02799d;
+}
+
+header p {
+  font-size: 32px;
+  font-weight: 600;
+  color: #e1e1e6;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    370px
+  ); /*ajustando o tamanho para incorporar a borda de 2px inserida de cada lado*/
+
+  gap: 48px 60px;
+  margin-top: 64px;
+}
+
+.card {
+  background-color: #202024;
+  border-radius: 8px;
+  border: 2px solid #323238;
+  overflow: hidden;
+}
+
+.card h2 {
+  font-weight: 900;
+  color: #e1e1e6;
+  font-size: 36px;
+
+  padding: 24px 32px 0;
+}
+
+.card p {
+  color: #c4c4cc;
+  font-size: 18px;
+  font-weight: 600;
+
+  padding: 24px 32px 32px;
+}
