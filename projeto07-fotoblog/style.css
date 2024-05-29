@@ -1,0 +1,220 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+  /*atentar no root, é :root para funcionar estava colocando o root como classe => .root*/
+
+  --color-base-white: #ffffff;
+  --color-base-gray-100: #f5f5f5;
+  --color-base-gray-300: #8d8d99;
+  --color-base-gray-600: #3d3d3d;
+  --color-base-gray-700: #323238;
+  --color-base-gray-900: #202024;
+}
+
+html,
+body,
+input {
+  font-family: "Mulish", sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+#app {
+  display: grid;
+  grid-template-rows: max-content 1fr max-content; /*no caso, header e footer se adaptando ao conteúdo (max content); o main como uma parte)*/
+  height: 100vh;
+}
+
+.container {
+  padding: 1.6rem 11.2rem;
+  width: min(
+    112rem,
+    100%
+  ); /*o tamanho vai aumentado até atingir 112rem (1120px), depois o tamanho continua o mesmo*/
+  margin: 0 auto;
+}
+
+main {
+  overflow-y: scroll; /*com esse atributo, todo o conteúdo do main que ultrapassar o vh, será scrollado; header e footer permanecem fixos*/
+  background-color: var(--color-base-gray-100);
+}
+
+header,
+nav,
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 7.2rem;
+  font-weight: 700;
+}
+
+header form {
+  flex: 1; /*aqui o form está preenchendo todo o espaço para ele*/
+}
+
+nav ul {
+  list-style: none;
+  font-size: 1.8rem;
+  color: var(--color-base-gray-300);
+}
+
+nav ul li.active {
+  color: var(--color-base-gray-900);
+}
+
+.input-wrapper label {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  /*aqui estou escondendo o label no código, porém acessbilidade consegue entender que o label é referente ao campo*/
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 1.6rem;
+
+  background-color: var(--color-base-gray-100);
+  border: 0;
+  border-radius: 0.6rem;
+
+  font-size: 1.6rem;
+  font-weight: 600;
+  opacity: 0.56;
+}
+
+.input-wrapper input::placeholder {
+  color: var(--color-base-gray-600);
+}
+
+.avatar {
+  width: 4.2rem;
+  height: 4.2rem;
+
+  border-radius: 50%; /*ao colocar 50%, o retangulo / quadrado se transforma em "círculo"*/
+
+  object-fit: cover; /*cobre o espaço sem deixar a imagem "esquisita"*/
+}
+
+/*galeria*/
+
+main h1 {
+  padding-top: 1.6rem;
+  font-size: 2.4rem;
+  color: var(--color-base-gray-900);
+}
+
+.gallery {
+  padding-top: 3.2rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 2.4rem;
+}
+
+.item {
+  background-color: var(--color-base-white);
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+.item img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+
+  /*transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;*/
+
+  transition: all 300ms ease-out; /*shorthand*/
+
+  display: block;
+}
+
+.item img:hover {
+  filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+  transform: rotate(-2deg) scale(1.1);
+}
+
+.details {
+  padding: 2.4rem;
+  background-color: var(--color-base-white);
+  position: relative;
+  z-index: 1;
+}
+
+.details h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-base-gray-900);
+}
+
+.tags {
+  margin-top: 1.2rem;
+}
+
+.tags span {
+  border-radius: 0.4rem;
+  padding: 0.6rem;
+
+  font-size: 1.2rem;
+  color: var(--color-base-gray-900);
+  text-transform: uppercase;
+  background-color: var(--color-base-gray-100);
+}
+
+/*footer*/
+
+footer p {
+  text-align: center;
+
+  font-weight: 600;
+  font-size: 1.6rem;
+
+  color: var(--color-base-gray-700);
+}
+
+/*animation*/
+
+header {
+  --startY: -100%; /*variável*/
+  animation: move 200ms;
+}
+
+footer {
+  --startY: 100%;
+  animation: move 200ms;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(var(--startY));
+  }
+}
+
+.item {
+  --delay: 400ms;
+  animation: appear 400ms var(--delay) backwards; /*traz configuração do 0% (início) para antes da animação*/
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
