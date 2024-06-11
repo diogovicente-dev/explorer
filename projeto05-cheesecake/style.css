@@ -77,7 +77,7 @@ button:hover {
 }
 
 @media (min-width: 1120px) {
-  /*tudo o que eu colocar acima de 768px vai entrar nessa regra; se colocar max-width, tudo o que for menor entre no que colocar aqui
+  /*tudo o que eu colocar acima de 1120px vai entrar nessa regra; se colocar max-width, tudo o que for menor entre no que colocar aqui
   para que funcione, no html tem que ter a tag (elemento) meta definido.
   ao inserir nessa regra, os "pixel" não funcina com o reset do :root feito (se for colocar em rem tem que dividir por 16.*/
   main {

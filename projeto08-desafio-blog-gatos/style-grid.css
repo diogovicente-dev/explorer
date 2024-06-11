@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: "Mulish", sans-serif;
+
+  --color-base-bg-header: hsl(195, 91%, 25%);
+  --color-base-bg-footer: hsl(195, 46%, 40%);
+  --color-base-white: hsl(0, 0%, 100%);
+  --color-base-bg-search: hsl(195, 46%, 40%);
+  --color-base-bg-card-hover: hsl(195, 10%, 97%);
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+#site {
+  display: grid;
+  margin-inline: auto;
+  min-width: 43rem;
+}
+
+header {
+  display: flex;
+  padding: 1.6rem 2.4rem;
+  gap: 2.4rem;
+
+  align-items: center;
+
+  background-color: var(--color-base-bg-header);
+}
+
+.logo {
+  display: flex;
+}
+
+.logo img {
+  width: 4rem;
+  height: 4rem;
+
+  align-self: center;
+}
+
+form {
+  width: 100%;
+}
+
+.input-wrapper label {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  /*escondendo o texto do label*/
+}
+
+.input-wrapper input {
+  font-family: "Mulish", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 100%;
+
+  background-color: var(--color-base-bg-search);
+  color: var(--color-base-white);
+
+  border: none;
+  border-radius: 0.4rem;
+  width: 100%;
+
+  padding: 1.2rem 1.6rem;
+}
+
+.input-wrapper input::placeholder {
+  color: var(--color-base-white);
+}
+
+.avatar {
+  display: flex;
+}
+
+.avatar img {
+  width: 4.2rem;
+  height: 4.2rem;
+
+  align-self: center;
+}
+
+/*main section*/
+
+.main-photo {
+  overflow: hidden;
+  height: fit-content;
+}
+
+.main-photo img {
+  scale: 1.01;
+  width: 100%;
+}
+
+section .title,
+section p {
+  padding: 0 2.4rem;
+}
+
+section .title {
+  padding-top: 3.2rem;
+}
+
+.title h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 160%;
+}
+
+.title .like-buttons {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.like-buttons button {
+  border: none;
+  background-color: white;
+  width: 4rem;
+  height: 4rem;
+}
+
+.like-buttons button img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.like-buttons button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  filter: contrast(150%);
+}
+
+section p {
+  padding-top: 3.2rem;
+  line-height: 160%;
+  font-weight: 400;
+}
+
+/*main aside*/
+
+aside {
+  padding: 3.2rem 2.4rem 4rem;
+}
+
+aside .card {
+  display: grid;
+  column-gap: 1.6rem;
+  margin-top: 3.2rem;
+  grid-template-areas:
+    "A B"
+    "A C";
+  align-items: center;
+
+  transition: all 300ms ease-out;
+}
+
+aside .card:hover {
+  filter: hue-rotate(10deg) contrast(105%) saturate(200%);
+  transform: scale(1.05);
+  background-color: var(--color-base-bg-card-hover);
+
+  border-radius: 1.6rem;
+  cursor: pointer;
+}
+
+aside .card figure {
+  grid-area: A;
+  width: 100%;
+}
+
+aside .card figure img {
+  width: 15.1rem;
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 160%;
+}
+
+.card p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 160%;
+
+  margin-top: 1.2rem;
+}
+
+/*footer*/
+
+footer {
+  padding: 2.4rem 1.6rem;
+  text-align: center;
+
+  background-color: var(--color-base-bg-footer);
+  color: var(--color-base-white);
+}
+
+@media (min-width: 768px) {
+  #site {
+    width: fit-content;
+    max-width: 1440px;
+  }
+
+  header {
+    padding: 1.6rem 11.2rem;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 4rem;
+
+    padding: 4.8rem 11.2rem;
+  }
+
+  .main-photo {
+    height: fit-content;
+  }
+
+  .main-photo img {
+    scale: 1;
+    min-width: 48rem;
+  }
+
+  section .title {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 3.2rem 0 0;
+  }
+
+  .title .like-buttons {
+    align-items: center;
+    margin-top: 0;
+    justify-content: end;
+  }
+
+  section p {
+    padding: 3.2rem 0 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 160%;
+  }
+
+  aside {
+    padding: 0;
+  }
+
+  aside .card {
+    min-width: 34rem;
+  }
+}
+
+/*animações*/
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.main-photo img {
+  animation: appear 1200ms 400ms backwards;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(var(--startY));
+  }
+}
+
+header {
+  animation: move 300ms;
+  --startY: -100%;
+}
+
+footer {
+  animation: move 300ms;
+  --startY: 100%;
+}
+
+@keyframes appear-cards {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+aside .card {
+  animation: appear-cards 400ms var(--delay) backwards;
+  --delay: 400ms;
+}
